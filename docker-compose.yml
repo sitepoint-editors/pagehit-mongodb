@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+  mongodb:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=mysecret
+    image: mongo:4-bionic
+    container_name: mongodb
+    volumes:
+      - dbdata:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - localnet
+
+  nodejs:
+    environment:
+      - NODE_ENV=development
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: nodejs
+    depends_on:
+      - mongodb
+    command: /bin/sh -c 'npm i && npm run debug'
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "3000:3000"
+    networks:
+      - localnet
+
+volumes:
+  dbdata:
+
+networks:
+  localnet:
