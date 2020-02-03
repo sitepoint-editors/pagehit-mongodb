@@ -15,6 +15,14 @@ services:
     networks:
       - localnet
 
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    volumes:
+      - ./testpages:/usr/share/nginx/html:ro
+    ports:
+      - "8888:80"
+
   nodejs:
     environment:
       - NODE_ENV=development
