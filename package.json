@@ -1,5 +1,5 @@
 {
-  "name": "pagehit-ram",
+  "name": "pagehit-mongodb",
   "version": "1.0.0",
   "description": "Page hit counter which saves data to a MongoDB database.",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/craigbuckler/pagehit-ram.git"
+    "url": "git+https://github.com/craigbuckler/pagehit-mongodb.git"
   },
   "author": "Craig Buckler",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/craigbuckler/pagehit-ram/issues"
+    "url": "https://github.com/craigbuckler/pagehit-mongodb/issues"
   },
-  "homepage": "https://github.com/craigbuckler/pagehit-ram#readme",
+  "homepage": "https://github.com/craigbuckler/pagehit-mongodb#readme",
   "dependencies": {
     "express": "^4.17.1",
     "mongodb": "^3.5.2"
